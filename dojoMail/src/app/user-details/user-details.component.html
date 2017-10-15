@@ -1,0 +1,20 @@
+<div>	
+
+		<h3>	{{this_user.email}} {{this_user.content}} {{this_user.importance}}</h3>
+
+		<table >
+	<tr>
+		<th>Email</th>
+		<th>Importance</th>
+		<th>Subject</th>
+		<th>Content</th>
+	</tr>
+
+	<tr *ngFor='let user of users'>
+		<th>{{user.email | lowercase}}</th>
+		<th>{{user.importance}}</th>
+		<th>{{user.subject}}</th>
+		<th>{{user.content}}</th>
+	</tr>
+</table>
+</div>
