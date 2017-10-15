@@ -1,0 +1,106 @@
+ <!--The content below is only a placeholder and can be replaced.-->
+
+<h1>
+  Welcome to {{title}}!
+</h1>
+<div>
+<p>{{msg}}</p>
+</div>
+<form (submit)="onSubmit()">
+ 
+  First Name: <input 
+    type="text" 
+    name="first_name" 
+    required 
+    minlength="4" 
+    maxlength="24"
+    placeholder = "first_name"
+    [(ngModel)]="user.first_name"
+    #first_name='ngModel'
+  /> <div *ngIf="first_name.errors">First name invalid</div> <br>
+  Last Name: <input 
+    type="text" 
+    name="last_name" 
+    required 
+    minlength="4" 
+    maxlength="24"
+    placeholder = "last_name"
+    [(ngModel)]="user.last_name"
+    #last_name='ngModel'
+  /> <div *ngIf="last_name.errors">last name  invalid</div><br>
+  Email: <input 
+    type="text" 
+    name="email" 
+    required 
+    minlength="4" 
+    maxlength="24"
+    placeholder = "email"
+    [(ngModel)]="user.email"
+    #email='ngModel'
+  /> <div *ngIf="email.errors">email  invalid</div><br>
+  Password: <input 
+    type="text" 
+    name="password" 
+    required 
+    minlength="10" 
+    maxlength="24"
+    placeholder = "password"
+    pattern="^([a-zA-Z0-9@*#]{8,15})$"
+    [(ngModel)]="user.password"
+    #password='ngModel'
+  /> <div *ngIf="password.errors">password  invalid</div><br>
+  Confirm password: <input 
+    type="text" 
+    name="confirmpassword" 
+    required 
+    minlength="10" 
+    maxlength="24"
+    placeholder = "confirmpassword"
+    pattern="^([a-zA-Z0-9@*#]{8,15})$"
+    [(ngModel)]="user.confirmpassword"
+    #confirmpassword='ngModel'
+  /> <div *ngIf="confirmpassword.errors">confirm password  invalid</div><br>
+  Street address: <input 
+    type="text" 
+    name="street_address" 
+    required 
+    minlength="4" 
+    maxlength="24"
+    placeholder = "street_address"
+    [(ngModel)]="user.street_address"
+    #street_address='ngModel'
+  /> <div *ngIf="street_address.errors">street address invalid</div><br>
+  Email:<input 
+    type="text" 
+    name="unitNumber" 
+    placeholder = "unitNumber"
+    [(ngModel)]="user.unitNumber"
+    #unitNumber='ngModel'
+  /> <div *ngIf="unitNumber.errors">unitNumber invalid</div><br>
+  unitNumber: <input 
+    type="text" 
+    name="city" 
+    required 
+    minlength="2" 
+    maxlength="24"
+    placeholder = "city"
+    [(ngModel)]="user.city"
+    #city='ngModel'
+  /> <div *ngIf="city.errors">city invalid</div><br>
+  city: <input 
+    type="text" 
+    name="state" 
+    required 
+    minlength="2" 
+    maxlength="24"
+    placeholder = "state"
+    [(ngModel)]="user.state"
+    #state='ngModel'
+  /> <div *ngIf="state.errors">state invalid</div><br>
+
+  <p *ngIf="first_name.valid && state.valid && city.valid && unitNumber.valid && street_address.valid && confirmpassword.valid && password.valid && email.valid &&  last_name.valid"> 
+  <input type="submit" value = "register">
+  </p>
+</form>
+
+<!-- '"false"&& "first_name.valid"&& "state.valid" && "city.valid" && "unitNumber.valid" && "street_address.valid" && "confirmpassword.valid" && "password.valid" && "email.valid" &&  "last_name.valid"' -->
