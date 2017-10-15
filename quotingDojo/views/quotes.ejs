@@ -1,0 +1,15 @@
+<html>
+    <head>
+    </head>
+    <body>
+    <h1>Here are the awesome quotes brew!</h1>
+	<% for(let x =0; x < users.length; x++){%>
+	<p>"<%=users[x].comment%>"</p>
+	<p>- <%=users[x].name%>  <%=users[x].creationTime.toDateString()%> </p>
+	<hr><%}%> 
+
+	<form action='/' method='get'>
+        <input type='submit'  value='back'>
+    </form>
+    </body>
+</html>
